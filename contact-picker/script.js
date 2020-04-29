@@ -4,12 +4,12 @@ const opts = { multiple: true };
 const resultDiv = document.querySelector('#result');
 const getContactsButton = document.querySelector('#getContacts');
 
-function handleContacts(contactlist) {
-    if(contactlist.length <= 0){
+function handleContacts(contacts) {
+    if(contacts.length <= 0){
         resultDiv.innerHTML = "<p>No contact selected</p>";
         return
     }
-    resultDiv.innerHTML = "<p>"+JSON.stringify(contact)+"</p>";
+    resultDiv.innerHTML = "<p>"+JSON.stringify(contacts)+"</p>";
     /*for (const contact in contactlist) {
         let contactP = document.createElement('div');
         contactP.innerHTML = "<p>" + JSON.stringify(contact) + "</p";
