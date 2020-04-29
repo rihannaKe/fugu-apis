@@ -1,13 +1,12 @@
 const supported = ('contacts' in navigator && 'ContactsManager' in window);
-const props = ['name', 'email', 'tel'];
-//const props = ['name', 'email', 'tel', 'address', 'icon'];
+const props = ['name', 'email', 'tel', 'address', 'icon'];
 const opts = { multiple: true };
 const resultDiv = document.querySelector('#result');
 const getContactsButton = document.querySelector('#getContacts');
 
-function handleContacts(contacts) {
-    contacts.forEach(c => {
-        const contactP = document.createElement('p');
+function handleContacts(contactlist) {
+    contactlist.forEach(c => {
+        let contactP = document.createElement('div');
         contactP.innerHTML = "<p>" + JSON.stringify(c) + "</p";
         resultDiv.appendChild(contactP);
     })
@@ -19,8 +18,7 @@ getContactsButton.addEventListener('click', async () => {
     } else {
         try {
             const contacts = await navigator.contacts.select(props, opts);
-            alert(JSON.stringify(contacts));
-            //handleContacts(contacts);
+            handleContacts(contacts);
         } catch (ex) {
             resultDiv.innerHTML = "<p>Error while getting contacts: " +JSON.stringify(ex)+"</p>";
         }
