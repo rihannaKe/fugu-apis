@@ -5,15 +5,15 @@ const resultDiv = document.querySelector('#result');
 const getContactsButton = document.querySelector('#getContacts');
 
 function handleContacts(contactlist) {
-    if(contactlist.length<=0){
+    if(contactlist.length <= 0){
         resultDiv.innerHTML = "<p>No contact selected</p>";
         return
     }
-    contactlist.forEach(c => {
+    for (const contact in contactlist) {
         let contactP = document.createElement('div');
-        contactP.innerHTML = "<p>" + JSON.stringify(c) + "</p";
+        contactP.innerHTML = "<p>" + JSON.stringify(contact) + "</p";
         resultDiv.appendChild(contactP);
-    })
+    }
 }
 
 getContactsButton.addEventListener('click', async () => {
