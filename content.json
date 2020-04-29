@@ -13,25 +13,13 @@
       ]
     },
     {
-        "label":"Forms",
+        "label":"Async Clipboard API Image",
         "links":[
           {
-            "label":"Basic Form",
-            "url":"forms/basic/index.html",
-            "note":"",
-            "docLink":""
-          },
-          {
-            "label":"Credi card",
-            "url":"forms/credit-card/index.html",
-            "note":"",
-            "docLink":""
-          },
-          {
-            "label":"Contact Info",
-            "url":"forms/contact-info/index.html",
-            "note":"googlesamples",
-            "docLink":""
+            "label":"Demo",
+            "url":"/clipboard-image-copy/index.html",
+            "note":"Example of how to copy and paste image",
+            "docLink":"https://web.dev/image-support-for-async-clipboard/"
           }
         ]
     }
