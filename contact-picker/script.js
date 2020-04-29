@@ -22,7 +22,7 @@ getContactsButton.addEventListener('click', async () => {
             alert(JSON.stringify(contacts));
             //handleContacts(contacts);
         } catch (ex) {
-            resultDiv.innerHTML = "<p>Error while getting contacts</p>";
+            resultDiv.innerHTML = "<p>Error while getting contacts: " +JSON.stringify(ex)+"</p>";
         }
     }
 });
