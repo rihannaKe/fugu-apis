@@ -24,7 +24,8 @@ getContactsButton.addEventListener('click', async () => {
     } else {
         try {
             const contacts = await navigator.contacts.select(props, opts);
-            handleContacts(contacts);
+            //handleContacts(contacts);
+            resultDiv.innerHTML = "<p>" +JSON.stringify(contacts)+"</p>";
         } catch (ex) {
             resultDiv.innerHTML = "<p>Error while getting contacts: " +JSON.stringify(ex)+"</p>";
         }
