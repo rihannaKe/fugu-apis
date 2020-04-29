@@ -5,16 +5,15 @@ const resultDiv = document.querySelector('#result');
 const getContactsButton = document.querySelector('#getContacts');
 
 function handleContacts(contacts) {
-    // if(contacts.length <= 0){
-    //     resultDiv.innerHTML = "<p>No contact selected</p>";
-    //     return
-    // }
-    resultDiv.innerHTML = "<p>"+JSON.stringify(contacts)+"</p>";
-    /*for (const contact in contactlist) {
+    if(contacts.length <= 0){
+        resultDiv.innerHTML = "<p>No contact selected</p>";
+        return
+    }
+    for (const contact in contactlist) {
         let contactP = document.createElement('div');
         contactP.innerHTML = "<p>" + JSON.stringify(contact) + "</p";
         resultDiv.appendChild(contactP);
-    }*/
+    }
 }
 
 getContactsButton.addEventListener('click', async () => {
@@ -24,8 +23,7 @@ getContactsButton.addEventListener('click', async () => {
     } else {
         try {
             const contacts = await navigator.contacts.select(props, opts);
-            //handleContacts(contacts);
-            alert("ok"+ JSON.stringify(contacts));
+            handleContacts(contacts);
         } catch (ex) {
             resultDiv.innerHTML = "<p>Error while getting contacts</p>";
         }
