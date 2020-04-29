@@ -6,7 +6,7 @@
       "links":[
         {
           "label":"Demo",
-          "url":"/contact-picker/index.html",
+          "url":"contact-picker/index.html",
           "note": "Example of how to use the contact picker api",
           "docLink":"https://web.dev/contact-picker/"
         }
