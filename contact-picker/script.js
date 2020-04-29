@@ -9,11 +9,12 @@ function handleContacts(contactlist) {
         resultDiv.innerHTML = "<p>No contact selected</p>";
         return
     }
-    for (const contact in contactlist) {
+    resultDiv.innerHTML = "<p>"+JSON.stringify(contact)+"</p>";
+    /*for (const contact in contactlist) {
         let contactP = document.createElement('div');
         contactP.innerHTML = "<p>" + JSON.stringify(contact) + "</p";
         resultDiv.appendChild(contactP);
-    }
+    }*/
 }
 
 getContactsButton.addEventListener('click', async () => {
