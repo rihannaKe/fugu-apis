@@ -1,5 +1,5 @@
 const supported = ('contacts' in navigator && 'ContactsManager' in window);
-const props = ['name', 'email', 'tel', 'address', 'icon'];
+const props = ['name', 'email', 'tel']; //, 'address', 'icon'
 const opts = { multiple: true };
 const resultDiv = document.querySelector('#result');
 const getContactsButton = document.querySelector('#getContacts');
