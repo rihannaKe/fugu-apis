@@ -5,6 +5,10 @@ const resultDiv = document.querySelector('#result');
 const getContactsButton = document.querySelector('#getContacts');
 
 function handleContacts(contactlist) {
+    if(contactlist.length<=0){
+        resultDiv.innerHTML = "<p>No contact selected</p>";
+        return
+    }
     contactlist.forEach(c => {
         let contactP = document.createElement('div');
         contactP.innerHTML = "<p>" + JSON.stringify(c) + "</p";
@@ -13,6 +17,7 @@ function handleContacts(contactlist) {
 }
 
 getContactsButton.addEventListener('click', async () => {
+    resultDiv.innerHTML = "";
     if (!supported) {
         resultDiv.innerHTML = "<p>The Contact API is not available in your browser.</p>";
     } else {
