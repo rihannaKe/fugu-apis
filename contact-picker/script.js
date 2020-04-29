@@ -1,5 +1,5 @@
 const supported = ('contacts' in navigator && 'ContactsManager' in window);
-const props = ['name', 'email', 'tel']; //, 'address', 'icon'
+const props = ['name', 'email', 'tel']; //, 'address', 'icon' original trail 
 const opts = { multiple: true };
 const resultDiv = document.querySelector('#result');
 const getContactsButton = document.querySelector('#getContacts');
@@ -25,9 +25,9 @@ getContactsButton.addEventListener('click', async () => {
         try {
             const contacts = await navigator.contacts.select(props, opts);
             //handleContacts(contacts);
-            alert("ok");
+            alert("ok"+ JSON.stringify(contacts));
         } catch (ex) {
-            resultDiv.innerHTML = "<p>Error while getting contacts: " +JSON.stringify(ex)+"</p>";
+            resultDiv.innerHTML = "<p>Error while getting contacts</p>";
         }
     }
 });
